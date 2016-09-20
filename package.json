@@ -1,0 +1,57 @@
+{
+    "name": "yet-another-react-starter",
+    "version": "0.0.1",
+    "description": "Simple React.js starter",
+    "author": "Alexey Gerasimenko <gerasimenko.ab@gmail.com>",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vetrolamu/yet-another-react-starter.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/vetrolamu/yet-another-react-starter/issues"
+    },
+    "homepage": "https://github.com/vetrolamu/yet-another-react-starter#readme",
+    "main": "src/client.js",
+    "scripts": {
+        "lint": "eslint ./src",
+        "dev": "NODE_ENV=development node ./start.js",
+        "build": "rimraf build && webpack --config ./webpack/webpack.config.prod.js",
+        "serve": "NODE_ENV=production node ./start.js",
+        "prod": "rimraf build && webpack --config ./webpack/webpack.config.prod.js && NODE_ENV=production node ./start.js"
+    },
+    "dependencies": {
+        "autoprefixer": "^6.3.7",
+        "babel-cli": "^6.10.1",
+        "babel-core": "^6.10.4",
+        "babel-eslint": "^6.1.2",
+        "babel-loader": "^6.2.4",
+        "babel-polyfill": "^6.13.0",
+        "babel-preset-es2015": "^6.9.0",
+        "babel-preset-react": "^6.11.1",
+        "babel-preset-react-hmre": "^1.1.1",
+        "babel-preset-stage-0": "^6.5.0",
+        "copy-webpack-plugin": "^3.0.1",
+        "cross-env": "^2.0.0",
+        "css-loader": "^0.23.1",
+        "eslint": "^3.5.0",
+        "eslint-plugin-babel": "^3.3.0",
+        "eslint-plugin-react": "^5.2.2",
+        "express": "^4.14.0",
+        "extract-text-webpack-plugin": "^1.0.1",
+        "node-sass": "^3.8.0",
+        "postcss-loader": "^0.9.1",
+        "react": "^15.2.1",
+        "react-dom": "^15.2.1",
+        "react-redux": "^4.4.5",
+        "react-router": "^2.6.1",
+        "react-router-redux": "^4.0.5",
+        "redux": "^3.5.2",
+        "rimraf": "^2.5.4",
+        "sass-loader": "^4.0.0",
+        "style-loader": "^0.13.1",
+        "webpack": "^1.13.1",
+        "webpack-dev-middleware": "^1.6.1",
+        "webpack-hot-middleware": "^2.12.2"
+    }
+}
