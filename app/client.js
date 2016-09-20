@@ -7,7 +7,13 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import reducers from './reducers';
 import routes from './routes';
 
-const store = createStore(reducers);
+function reduxDevTools() {
+    return process.env.NODE_ENV === 'development' && typeof window === 'object' && window.devToolsExtension
+        ? window.devToolsExtension()
+        : f => f;
+}
+
+const store = createStore(reducers, reduxDevTools());
 const history = syncHistoryWithStore(browserHistory, store);
 
 render(
