@@ -7,3 +7,4 @@
 - Universal
 - Express
 - Eslint
+- Jest
