@@ -33,11 +33,20 @@ module.exports = {
                 }
             },
             {
+                test: /\.js$|\.jsx$/,
+                loader: 'eslint-loader',
+                exclude: [/node_modules/, /build/]
+            },
+
+            {
                 test: /\.scss/,
                 loader: 'style!css!sass!postcss',
                 include: path.resolve(__dirname, '..', 'app')
             }
         ]
+    },
+    eslint: {
+        configFile: '.eslintrc'
     },
     externals: {
         react: 'React',

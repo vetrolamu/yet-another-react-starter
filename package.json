@@ -50,8 +50,9 @@
         "webpack-hot-middleware": "^2.12.2"
     },
     "devDependencies": {
+        "babel-eslint": "^6.1.2",
         "eslint": "^3.5.0",
-        "eslint-plugin-babel": "^3.3.0",
-        "eslint-plugin-react": "^5.2.2"
+        "eslint-loader": "^1.5.0",
+        "eslint-plugin-react": "^6.3.0"
     }
 }
