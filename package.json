@@ -12,7 +12,6 @@
         "url": "https://github.com/vetrolamu/yet-another-react-starter/issues"
     },
     "homepage": "https://github.com/vetrolamu/yet-another-react-starter#readme",
-    "main": "src/client.js",
     "scripts": {
         "lint": "eslint ./src",
         "dev": "NODE_ENV=development node ./start.js",
