@@ -39,6 +39,10 @@ module.exports = {
             }
         ]
     },
+    externals: {
+        react: 'React',
+        'react-dom': 'ReactDOM'
+    },
     postcss() {
         return [autoprefixer];
     }
