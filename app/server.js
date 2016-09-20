@@ -9,12 +9,12 @@ import reducers from './reducers';
 import routes from './routes';
 
 export default (req, res) => {
-	match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
-		if(error) {
-			res.status(500).send(error.message);
-		} else if(redirectLocation) {
-			res.redirect(302, redirectLocation.pathname + redirectLocation.search);
-		} else if(renderProps) {
+    match({routes, location: req.url}, (error, redirectLocation, renderProps) => {
+        if(error) {
+            res.status(500).send(error.message);
+        } else if(redirectLocation) {
+            res.redirect(302, redirectLocation.pathname + redirectLocation.search);
+        } else if(renderProps) {
             const body = process.env.NODE_ENV === 'production'
                 ? renderToString(
                     <Provider store={createStore(reducers)}>
@@ -24,8 +24,8 @@ export default (req, res) => {
                 : null;
 
             res.status(200).send(`<!DOCTYPE html>${renderToStaticMarkup(React.createElement(Html, {body}))}`);
-		} else {
-			res.status(404).send('Not found');
-		}
-	});
+        } else {
+            res.status(404).send('Not found');
+        }
+    });
 };

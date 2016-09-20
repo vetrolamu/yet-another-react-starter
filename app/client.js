@@ -11,16 +11,16 @@ const store = createStore(reducers);
 const history = syncHistoryWithStore(browserHistory, store);
 
 render(
-	<Provider store={store}>
-		<Router history={history}>
-			{routes}
-		</Router>
-	</Provider>,
-	document.getElementById('app')
+    <Provider store={store}>
+        <Router history={history}>
+            {routes}
+        </Router>
+    </Provider>,
+    document.getElementById('app')
 );
 
 if(process.env.NODE_ENV === 'development' && module.hot) {
-	module.hot.accept('./reducers', () => {
-		store.replaceReducer(require('./reducers').default);
-	});
+    module.hot.accept('./reducers', () => {
+        store.replaceReducer(require('./reducers').default);
+    });
 }

@@ -5,7 +5,7 @@ const Html = ({body}) => {
         <html>
             <head>
                 {process.env.NODE_ENV === 'production' &&
-                    <link rel="stylesheet" href="bundle.css" />}
+                <link rel="stylesheet" href="bundle.css" />}
                 <title>My Universal App</title>
             </head>
             <body>
