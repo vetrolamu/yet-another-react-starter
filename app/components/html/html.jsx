@@ -8,13 +8,13 @@ const Html = ({body}) => {
         <html>
             <head>
                 {isProduction && [
-                    <link rel="stylesheet" href="bundle.css" />,
-                    <script src="https://unpkg.com/react@15.3.2/dist/react.min.js"></script>,
-                    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.min.js"></script>
+                    <link key="bundle" rel="stylesheet" href="bundle.css" />,
+                    <script key="react" src="https://unpkg.com/react@15.3.2/dist/react.min.js"></script>,
+                    <script key="react-dom" src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.min.js"></script>
                 ]}
                 {isDevelopment && [
-                    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>,
-                    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+                    <script key="react" src="https://unpkg.com/react@15.3.2/dist/react.js"></script>,
+                    <script key="react-dom" src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
                 ]}
                 <title>React App</title>
             </head>
