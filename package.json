@@ -17,7 +17,7 @@
         "dev": "NODE_ENV=development node ./start.js",
         "build": "rm -rf build && webpack --config ./webpack/webpack.config.prod.js",
         "serve": "NODE_ENV=production node ./start.js",
-        "prod": "npm run build && npm run serve"
+        "start": "npm run build && npm run serve"
     },
     "dependencies": {
         "autoprefixer": "^6.3.7",
