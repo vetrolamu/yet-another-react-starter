@@ -14,9 +14,9 @@
     "homepage": "https://github.com/vetrolamu/yet-another-react-starter#readme",
     "scripts": {
         "lint": "eslint ./src",
-        "dev": "NODE_ENV=development node ./start.js",
+        "dev": "NODE_ENV=development nodemon ./start.js",
         "build": "rm -rf build && webpack --config ./webpack/webpack.config.prod.js",
-        "serve": "NODE_ENV=production node ./start.js",
+        "serve": "NODE_ENV=production nodemon ./start.js",
         "start": "npm run build && npm run serve"
     },
     "dependencies": {
@@ -32,12 +32,10 @@
         "babel-preset-stage-0": "^6.5.0",
         "copy-webpack-plugin": "^3.0.1",
         "css-loader": "^0.23.1",
-        "eslint": "^3.5.0",
-        "eslint-plugin-babel": "^3.3.0",
-        "eslint-plugin-react": "^5.2.2",
         "express": "^4.14.0",
         "extract-text-webpack-plugin": "^1.0.1",
         "node-sass": "^3.8.0",
+        "nodemon": "^1.10.2",
         "postcss-loader": "^0.9.1",
         "react": "^15.3.2",
         "react-dom": "^15.3.2",
@@ -50,5 +48,10 @@
         "webpack": "^1.13.1",
         "webpack-dev-middleware": "^1.6.1",
         "webpack-hot-middleware": "^2.12.2"
+    },
+    "devDependencies": {
+        "eslint": "^3.5.0",
+        "eslint-plugin-babel": "^3.3.0",
+        "eslint-plugin-react": "^5.2.2"
     }
 }
