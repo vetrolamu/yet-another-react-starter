@@ -7,6 +7,7 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 if(process.env.NODE_ENV === 'development') {
     const compiler = webpack(configDev);
@@ -32,10 +33,10 @@ if(process.env.NODE_ENV === 'development') {
 
 app.get('*', reactApp);
 
-app.listen(3000, '0.0.0.0', (err) => {
+app.listen(port, '0.0.0.0', (err) => {
     if(err) {
         console.error(err); // eslint-disable-line no-console
     } else {
-        console.info('Listening at http://localhost:3000'); // eslint-disable-line no-console
+        console.info(`Listening at http://localhost:${port}`); // eslint-disable-line no-console
     }
 });
