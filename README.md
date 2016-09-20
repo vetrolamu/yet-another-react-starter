@@ -2,7 +2,7 @@
 
 - Webpack
 - ES6
-- React.js
+- React.js
 - Redux
 - Universal
 - Express
