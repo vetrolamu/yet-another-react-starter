@@ -1,4 +1,6 @@
+import * as constants from '../constants/todos';
+
 const toggleTodo = (id) =>
-    ({type: 'TOGGLE_TODO', id});
+    ({type: constants.TOGGLE_TODO, id});
 
 export {toggleTodo};

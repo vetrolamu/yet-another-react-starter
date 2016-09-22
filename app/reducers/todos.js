@@ -1,3 +1,5 @@
+import * as constants from '../constants/todos';
+
 const initialState = [
     {id: 1, text: 'Item 1', checked: false},
     {id: 2, text: 'Item 2', checked: false},
@@ -6,7 +8,7 @@ const initialState = [
 
 export default (state=initialState, action) => {
     switch (action.type) {
-        case 'TOGGLE_TODO':
+        case constants.TOGGLE_TODO:
             return state.map((todo) => {
                 if (todo.id === action.id) {
                     todo.checked = !todo.checked;
