@@ -14,9 +14,9 @@
   "homepage": "https://github.com/vetrolamu/yet-another-react-starter#readme",
   "scripts": {
     "lint": "eslint ./src",
-    "dev": "NODE_ENV=development nodemon ./start.js",
+    "dev": "NODE_ENV=development nodemon --debug --config .nodemon ./start.js",
     "build": "rm -rf build && webpack --config ./webpack/webpack.config.prod.js",
-    "serve": "NODE_ENV=production nodemon ./start.js",
+    "serve": "NODE_ENV=production node ./start.js",
     "start": "npm run build && npm run serve",
     "test": "jest"
   },
