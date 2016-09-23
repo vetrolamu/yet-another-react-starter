@@ -16,11 +16,11 @@ export default (state=initialState, action) => {
 
                 return {...todo};
             });
-            
+
             return {...state, items};
 
         case constants.REQUEST_TODOS:
-            return {...state, isFetching: false};
+            return {...state, isFetching: true};
 
         case constants.RECEIVE_TODOS:
             return {...state, isFetching: false, items: action.items};
