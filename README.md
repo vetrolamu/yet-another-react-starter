@@ -2,11 +2,52 @@
 
 Universal React+Redux starter kit.
 
-- Webpack
-- ES6
+- Universal rendering
+- Isomorphic asynchronous data fetching on server and client
 - React.js
 - Redux
-- Universal (server render, isomorphic data fetching at both server and client)
+- React Router (integrated with Redux)
 - Express
+- Hot Module Replacement
+- Webpack for bundling (both development and production)
+- ES6+
 - Eslint
-- Jest
+- Jest as testing tool
+- Time Travel using Redux-Devtools Chrome Extension
+
+## Instructions
+
+#### Installation
+
+```bash
+npm install
+```
+
+#### Development
+
+```bash
+npm run dev
+```
+
+
+#### Production
+
+```bash
+npm run build
+npm run serve
+```
+
+or
+
+```bash
+# npm run build && npm run serve
+npm start
+```
+
+Supports deployment to Heroku from repository
+
+#### Unit Tests
+
+```bash
+npm run test
+```
