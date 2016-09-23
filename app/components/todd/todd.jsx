@@ -10,12 +10,9 @@ export default class Page extends Component {
         return (
             <div className="todd">
                 <Header title="Todd" />
-                <div>Hi, I am Todd</div>
-                <img src="/assets/todd.png" />
+                <div>Hi, I am Todd. Look at <Link to="/">my todos</Link></div>
+                <img src="/assets/todd.png" width="200" />
                 <br />
-                <Link to="/">
-                    <button>Go to list</button>
-                </Link>
             </div>
         );
     }

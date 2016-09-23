@@ -1,24 +1,29 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import reducers from './reducers';
 import routes from './routes';
+import configureStore from './configureStore';
+import fetchData from './fetchDataMiddleware';
 
-function reduxDevTools() {
-    return process.env.NODE_ENV === 'development' && typeof window === 'object' && window.devToolsExtension
-        ? window.devToolsExtension()
-        : f => f;
-}
+const preloadedState = window.__PRELOADED_STATE__;
 
-const store = createStore(reducers, reduxDevTools());
+const store = configureStore({preloadedState, isClient: true});
 const history = syncHistoryWithStore(browserHistory, store);
+
+function onUpdate() {
+    if (window.__PRELOADED_STATE__ !== null) {
+        window.__PRELOADED_STATE__ = null;
+        return;
+    }
+
+    fetchData({store, ...this.state});
+}
 
 render(
     <Provider store={store}>
-        <Router history={history}>
+        <Router history={history} onUpdate={onUpdate}>
             {routes}
         </Router>
     </Provider>,
