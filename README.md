@@ -44,7 +44,7 @@ or
 npm start
 ```
 
-Supports deployment to Heroku from repository
+Supports deployment to Heroku from Github repository
 
 #### Unit Tests
 
