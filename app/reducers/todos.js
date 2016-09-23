@@ -1,18 +1,30 @@
-const initialState = [
-    {id: 1, text: 'Item 1', checked: false},
-    {id: 2, text: 'Item 2', checked: false},
-    {id: 3, text: 'Item 3', checked: false}
-];
+import * as constants from '../constants/todos';
+
+const initialState = {
+    items: [],
+    isFetching: false,
+    didInvalidate: false
+};
 
 export default (state=initialState, action) => {
     switch (action.type) {
-        case 'TOGGLE_TODO':
-            return state.map((todo) => {
+        case constants.TOGGLE_TODO:
+            const items = state.items.map((todo) => {
                 if (todo.id === action.id) {
-                    todo.checked = !todo.checked;
+                    todo.completed = !todo.completed;
                 }
-                return todo;
+
+                return {...todo};
             });
+            
+            return {...state, items};
+
+        case constants.REQUEST_TODOS:
+            return {...state, isFetching: false};
+
+        case constants.RECEIVE_TODOS:
+            return {...state, isFetching: false, items: action.items};
+
         default:
             return state;
     }
