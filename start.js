@@ -1,5 +1,18 @@
+const WebpackIsomorphicTools = require('webpack-isomorphic-tools');
 require('babel-core/register');
-['.css', '.scss', '.ttf', '.woff', '.woff2', '.png', '.jpg', '.gif', '.svg']
-    .forEach(ext => require.extensions[ext] = () => {});
 require('babel-polyfill');
-require('./server/index.js');
+
+['.css', '.scss', '.ttf', '.woff', '.woff2'].forEach(ext => require.extensions[ext] = () => {});
+
+if (process.env.NODE_ENV === 'development') {
+    ['.png', '.jpg', '.jpeg', '.gif', '.svg'].forEach(ext => require.extensions[ext] = () => '');
+    require('./server/index.js')
+}
+
+if (process.env.NODE_ENV === 'production') {
+    global.webpack_isomorphic_tools = new WebpackIsomorphicTools(require('./webpack/webpack-isomorphic-config'))
+        .server('./', function() {
+            require('./server/index.js')
+        });
+}
+

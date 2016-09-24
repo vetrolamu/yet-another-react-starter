@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpackConfigBase = require('./webpack.config.base');
+const WebpackIsomorphicToolsPlugin = require('webpack-isomorphic-tools/plugin');
 
 module.exports = Object.assign(webpackConfigBase, {
     entry: path.resolve(__dirname, '..', 'app', 'client.js'),
@@ -28,7 +29,8 @@ module.exports = Object.assign(webpackConfigBase, {
                 to: path.resolve(__dirname, '..', 'build', 'assets')
             }
         ]),
-        new ExtractTextPlugin('bundle.css')
+        new ExtractTextPlugin('bundle.css'),
+        new WebpackIsomorphicToolsPlugin(require('./webpack-isomorphic-config'))
     ],
     module: {
         loaders: webpackConfigBase.module.loaders.concat([

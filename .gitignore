@@ -2,3 +2,7 @@
 node_modules
 npm-debug.log
 build
+
+# Webpack Isomorphic Tools
+/webpack-assets.json
+/webpack-stats.json
