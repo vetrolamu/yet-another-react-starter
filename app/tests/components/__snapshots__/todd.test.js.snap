@@ -1,0 +1,21 @@
+exports[`test renders correctly 1`] = `
+<div
+  className="todd">
+  <h1
+    title="Todd">
+    Todd
+  </h1>
+  <div>
+    Hi, I am Todd. Look at 
+    <a
+      onClick={[Function bound handleClick]}
+      style={Object {}}>
+      my todos
+    </a>
+  </div>
+  <img
+    src="FILE_MOCK"
+    width="200" />
+  <br />
+</div>
+`;
