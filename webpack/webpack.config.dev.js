@@ -1,8 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
+const webpackConfigBase = require('./webpack.config.base');
 
-module.exports = {
+module.exports = Object.assign(webpackConfigBase, {
     entry: [
         'webpack-hot-middleware/client',
         path.resolve(__dirname, '..', 'app', 'client.js')
@@ -17,13 +17,12 @@ module.exports = {
         new webpack.NoErrorsPlugin(),
         new webpack.DefinePlugin({
             'process.env': {
-                NODE_ENV: JSON.stringify('development'),
-                WEBPACK: true
+                NODE_ENV: JSON.stringify('development')
             }
         })
     ],
     module: {
-        loaders: [
+        loaders: webpackConfigBase.module.loaders.concat([
             {
                 test: /\.js$|\.jsx$/,
                 loader: 'babel',
@@ -37,22 +36,14 @@ module.exports = {
                 loader: 'eslint-loader',
                 exclude: [/node_modules/, /build/]
             },
-
             {
                 test: /\.scss/,
                 loader: 'style!css!sass!postcss',
                 include: path.resolve(__dirname, '..', 'app')
             }
-        ]
+        ])
     },
     eslint: {
         configFile: '.eslintrc'
-    },
-    externals: {
-        react: 'React',
-        'react-dom': 'ReactDOM'
-    },
-    postcss() {
-        return [autoprefixer];
     }
-};
+});
