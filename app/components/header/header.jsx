@@ -1,7 +1,11 @@
+import Helmet from 'react-helmet';
 import React from 'react';
 
 const Header = (props) => (
-    <h1 {...props}>{props.title}</h1>
+    <h1 {...props}>
+        <Helmet title={props.title} />
+        {props.title}
+    </h1>
 );
 
 Header.propTypes = {
