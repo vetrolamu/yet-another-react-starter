@@ -41,8 +41,8 @@
     "node-sass": "^3.8.0",
     "nodemon": "^1.10.2",
     "postcss-loader": "^0.9.1",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0",
     "react-helmet": "^3.1.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.1",
@@ -66,6 +66,7 @@
     "eslint-plugin-react": "^6.3.0",
     "jest": "^15.1.1",
     "jest-cli": "^15.1.1",
+    "react-hot-loader": "^3.0.0-beta.6",
     "react-test-renderer": "^15.3.2"
   }
 }

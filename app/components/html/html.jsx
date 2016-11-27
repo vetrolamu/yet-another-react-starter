@@ -3,12 +3,12 @@ import React from 'react';
 
 const REACT_SCRIPTS = {
     production: [
-        {src: 'https://unpkg.com/react@15.3.2/dist/react.min.js'},
-        {src: 'https://unpkg.com/react-dom@15.3.2/dist/react-dom.min.js'}
+        {src: 'https://unpkg.com/react@15.4.0/dist/react.min.js'},
+        {src: 'https://unpkg.com/react-dom@15.4.0/dist/react-dom.min.js'}
     ],
     development: [
-        {src: 'https://unpkg.com/react@15.3.2/dist/react.js'},
-        {src: 'https://unpkg.com/react-dom@15.3.2/dist/react-dom.js'}
+        {src: 'https://unpkg.com/react@15.4.0/dist/react.js'},
+        {src: 'https://unpkg.com/react-dom@15.4.0/dist/react-dom.js'}
     ]
 };
 

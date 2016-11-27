@@ -4,6 +4,7 @@ const webpackConfigBase = require('./webpack.config.base');
 
 module.exports = Object.assign(webpackConfigBase, {
     entry: [
+        'react-hot-loader/patch',
         'webpack-hot-middleware/client',
         path.resolve(__dirname, '..', 'app', 'client.js')
     ],
@@ -25,11 +26,8 @@ module.exports = Object.assign(webpackConfigBase, {
         loaders: webpackConfigBase.module.loaders.concat([
             {
                 test: /\.js$|\.jsx$/,
-                loader: 'babel',
-                include: path.resolve(__dirname, '..', 'app'),
-                query: {
-                    presets: ['react-hmre']
-                }
+                loaders: ['react-hot-loader/webpack', 'babel'],
+                include: path.resolve(__dirname, '..', 'app')
             },
             {
                 test: /\.js$|\.jsx$/,

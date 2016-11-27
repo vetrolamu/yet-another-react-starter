@@ -1,9 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import routes from './routes';
+
+import App from './components/app/app.jsx';
 import configureStore from './configureStore';
 import fetchData from './fetchDataMiddleware';
 
@@ -22,16 +24,22 @@ function onUpdate() {
 }
 
 render(
-    <Provider store={store}>
-        <Router history={history} onUpdate={onUpdate}>
-            {routes}
-        </Router>
-    </Provider>,
+    <AppContainer>
+        <App {...{store, history, onUpdate}} />
+    </AppContainer>,
     document.getElementById('app')
 );
 
-if(process.env.NODE_ENV === 'development' && module.hot) {
-    module.hot.accept('./reducers', () => {
-        store.replaceReducer(require('./reducers').default);
+// Hot Module Replacement API
+if (module.hot) {
+    // TODO: Find proper way to avoid warning from https://github.com/gaearon/react-hot-loader/issues/298
+    module.hot.accept('./components/app/app.jsx', () => {
+        const NextApp = require('./components/app/app.jsx').default;
+        ReactDOM.render(
+            <AppContainer>
+                <NextApp {...{store, history, onUpdate}} />
+            </AppContainer>,
+            document.getElementById('app')
+        );
     });
 }
