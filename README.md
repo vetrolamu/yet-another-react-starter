@@ -22,11 +22,7 @@ Universal React+Redux starter kit.
 
 ```bash
 npm install
-```
-
-or 
-
-```bash
+# or 
 yarn
 ```
 
@@ -34,11 +30,7 @@ yarn
 
 ```bash
 npm run dev
-```
-
-or 
-
-```bash
+# or
 yarn dev
 ```
 
@@ -47,18 +39,19 @@ yarn dev
 ```bash
 npm run build
 npm run serve
+# or
+yarn build
+yarn serve
+
 ```
 
 or
 
 ```bash
-# npm run build && npm run serve
+# build && serve
+
 npm start
-```
-
-or 
-
-```bash
+# or
 yarn start
 ```
 
@@ -69,10 +62,6 @@ Supports deployment to Heroku from Github repository
 
 ```bash
 npm run test
-```
-
-or
-
-```bash
+# or
 yarn test
 ```
