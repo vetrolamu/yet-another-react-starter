@@ -17,7 +17,7 @@
     "dev": "NODE_ENV=development nodemon ./start.js",
     "build": "rm -rf build && webpack --config ./webpack/webpack.config.prod.js",
     "serve": "NODE_ENV=production node ./start.js",
-    "start": "npm run build && npm run serve",
+    "start": "rm -rf build && webpack --config ./webpack/webpack.config.prod.js && NODE_ENV=production node ./start.js",
     "test": "jest --config ./jest.json"
   },
   "dependencies": {
