@@ -6,3 +6,6 @@ build
 # Webpack Isomorphic Tools
 /webpack-assets.json
 /webpack-stats.json
+
+# yarn
+/yarn-error.log

@@ -14,6 +14,7 @@ Universal React+Redux starter kit.
 - Eslint
 - Jest as testing tool
 - Time Travel using Redux-Devtools Chrome Extension
+- Yarn
 
 ## Instructions
 
@@ -23,12 +24,23 @@ Universal React+Redux starter kit.
 npm install
 ```
 
+or 
+
+```bash
+yarn
+```
+
 #### Development
 
 ```bash
 npm run dev
 ```
 
+or 
+
+```bash
+yarn dev
+```
 
 #### Production
 
@@ -44,10 +56,23 @@ or
 npm start
 ```
 
+or 
+
+```bash
+yarn start
+```
+
+
 Supports deployment to Heroku from Github repository
 
 #### Unit Tests
 
 ```bash
 npm run test
+```
+
+or
+
+```bash
+yarn test
 ```
