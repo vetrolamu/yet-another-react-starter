@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
 import { render } from 'react-dom';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
@@ -23,23 +22,29 @@ function onUpdate() {
     fetchData({store, ...this.state});
 }
 
-render(
-    <AppContainer>
-        <App {...{store, history, onUpdate}} />
-    </AppContainer>,
-    document.getElementById('app')
-);
+const rootComponent = <App {...{store, history, onUpdate}} />;
+const rootDOMElement = document.getElementById('app');
 
-// Hot Module Replacement API
-if (module.hot) {
-    // TODO: Find proper way to avoid warning from https://github.com/gaearon/react-hot-loader/issues/298
-    module.hot.accept('./components/app/app.jsx', () => {
-        const NextApp = require('./components/app/app.jsx').default;
-        ReactDOM.render(
-            <AppContainer>
-                <NextApp {...{store, history, onUpdate}} />
-            </AppContainer>,
-            document.getElementById('app')
-        );
-    });
+if (process.env.NODE_ENV === 'production') {
+    render(rootComponent, rootDOMElement);
+}
+
+if (process.env.NODE_ENV === 'development') {
+    const AppContainer = require('react-hot-loader').AppContainer;
+
+    render(<AppContainer>{rootComponent}</AppContainer>, rootDOMElement);
+
+    // Hot Module Replacement API
+    if (module.hot) {
+        // TODO: Find proper way to avoid warning from https://github.com/gaearon/react-hot-loader/issues/298
+        module.hot.accept('./components/app/app.jsx', () => {
+            const NextApp = require('./components/app/app.jsx').default;
+            ReactDOM.render(
+                <AppContainer>
+                    <NextApp {...{store, history, onUpdate}} />
+                </AppContainer>,
+                document.getElementById('app')
+            );
+        });
+    }
 }
