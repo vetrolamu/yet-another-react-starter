@@ -20,6 +20,9 @@
     "start": "rm -rf build && webpack --config ./webpack/webpack.config.prod.js && NODE_ENV=production node ./start.js",
     "test": "jest --config ./jest.json"
   },
+  "engines": {
+    "node": "=5.11.1"
+  },
   "dependencies": {
     "autoprefixer": "^6.3.7",
     "babel-cli": "^6.10.1",
