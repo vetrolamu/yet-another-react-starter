@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import Header from '../header/header.jsx';
 import todosActions from '../../actions/todos';
 
-import './home.scss';
+import { Root, Table } from './home.styles';
 
 const Home = React.createClass({
     propTypes: {
@@ -17,10 +17,10 @@ const Home = React.createClass({
         const {todos: {items}, dispatch} = this.props;
 
         return (
-            <div className="home">
+            <Root>
                 <Header title="Todd's todos" />
                 <Link to="/page">Let's see Todd</Link>
-                <table className="home__table">
+                <Table>
                     <tbody>
                     {items.map(({id, completed, title}) => (
                         <tr key={id}>
@@ -37,9 +37,9 @@ const Home = React.createClass({
                         </tr>
                     ))}
                     </tbody>
-                </table>
+                </Table>
                 <br/>
-            </div>
+            </Root>
         );
     }
 });

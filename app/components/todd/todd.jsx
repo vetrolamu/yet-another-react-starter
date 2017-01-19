@@ -3,15 +3,15 @@ import { Link } from 'react-router';
 
 import Header from '../header/header.jsx';
 
-import './todd.scss';
+import { Root } from './todd.styles';
 
 const Page = () => (
-    <div className="todd">
+    <Root>
         <Header title="Todd" />
         <div>Hi, I am Todd. Look at <Link to="/">my todos</Link></div>
         <img src="./todd.png" width="200" />
         <br />
-    </div>
+    </Root>
 );
 
 export default Page;

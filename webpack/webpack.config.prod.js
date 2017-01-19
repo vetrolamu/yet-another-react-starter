@@ -29,7 +29,6 @@ module.exports = Object.assign(webpackConfigBase, {
                 to: path.resolve(__dirname, '..', 'build', 'assets')
             }
         ]),
-        new ExtractTextPlugin('bundle.css'),
         new WebpackIsomorphicToolsPlugin(require('./webpack-isomorphic-config'))
     ],
     module: {
@@ -37,11 +36,6 @@ module.exports = Object.assign(webpackConfigBase, {
             {
                 test: /\.js$|\.jsx$/,
                 loader: 'babel',
-                include: path.resolve(__dirname, '..', 'app')
-            },
-            {
-                test: /\.scss/,
-                loader: ExtractTextPlugin.extract('style', 'css!sass!postcss'),
                 include: path.resolve(__dirname, '..', 'app')
             }
         ])

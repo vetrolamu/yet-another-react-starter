@@ -13,9 +13,7 @@ const REACT_SCRIPTS = {
 };
 
 const APP_STYLESHEETS = {
-    production: [
-        {rel: 'stylesheet', href: '/bundle.css'}
-    ],
+    production: [],
     development: []
 };
 
